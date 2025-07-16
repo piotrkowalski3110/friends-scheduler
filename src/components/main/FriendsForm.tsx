@@ -17,12 +17,8 @@ const FriendsForm = () => {
   const [inputValue, setInputValue] = useState<string>('');
 
   const updateFriendsList = () => {
-    const newFriend =
-      {
-        name: inputValue,
-        workingHours: null
-      }
-    setFriends((friends) => [...friends, newFriend]);
+    if (!inputValue.trim()) return null;
+    setFriends((friends) => [...friends, {name: inputValue, workingHours: null}]);
     setInputValue('');
   }
 
@@ -46,13 +42,6 @@ const FriendsForm = () => {
             <Plus size={16}/>
           </Button>
         </div>
-      </div>
-      <div>
-        {
-          friends.map((friend, index) => {
-            return <h1 key={index}>{friend.name}</h1>
-          })
-        }
       </div>
     </div>
   );

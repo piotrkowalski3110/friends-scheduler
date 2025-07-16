@@ -10,7 +10,7 @@ const Header = () => {
           <p className="text-2xl font-bold">Meeting Scheduler</p>
           <p className="opacity-65">Coordinate schedules with your friends to find the perfect meeting
             time</p>
-          <div className="flex flex-col gap-4 w-full p-3 rounded-2xl border bg-white dark:bg-[#1c1c1c]">
+          <div className="flex flex-col w-full gap-4 p-3 rounded-2xl border bg-white dark:bg-[#1c1c1c]">
             <div className="flex flex-row items-center gap-2">
               <Info size={16}/>
               <p className="font-semibold">How to use:</p>

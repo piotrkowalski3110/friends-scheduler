@@ -1,6 +1,6 @@
 import ModeToggle from "@/components/themes/ModeToggle";
 import Header from "@/components/header/Header";
-import FriendsForm from "@/components/main/FriendsForm";
+import FriendsForm from "@/components/main/friends/FriendsForm";
 
 export default function Home() {
   return (
@@ -12,8 +12,6 @@ export default function Home() {
           <ModeToggle/>
         </div>
         <div className="flex flex-row max-sm:flex-col justify-between w-full px-4 py-6 gap-6">
-          <FriendsForm/>
-          <FriendsForm/>
           <FriendsForm/>
         </div>
       </div>

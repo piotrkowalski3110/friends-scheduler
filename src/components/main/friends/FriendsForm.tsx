@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Plus } from 'lucide-react';
 import { useState } from "react";
-import FriendResultCard from "@/components/main/FriendResultCard";
+import FriendResultCard from "@/components/main/friends/FriendResultCard";
 
 interface IFriend {
   id: string,

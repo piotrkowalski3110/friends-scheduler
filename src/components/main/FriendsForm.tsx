@@ -5,8 +5,10 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Plus } from 'lucide-react';
 import { useState } from "react";
+import FriendResultCard from "@/components/main/FriendResultCard";
 
 interface IFriend {
+  id: string,
   name: string,
   workingHours: Date[] | null
 }
@@ -18,8 +20,12 @@ const FriendsForm = () => {
 
   const updateFriendsList = () => {
     if (!inputValue.trim()) return null;
-    setFriends((friends) => [...friends, {name: inputValue, workingHours: null}]);
+    setFriends((prevFriends) => [...prevFriends, {id: crypto.randomUUID(), name: inputValue, workingHours: null}]);
     setInputValue('');
+  }
+
+  const removeFriend = (id: string) => {
+    setFriends((prevFriends) => prevFriends.filter(friend => friend.id !== id));
   }
 
   return (
@@ -42,6 +48,16 @@ const FriendsForm = () => {
             <Plus size={16}/>
           </Button>
         </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        {friends.map((friend, index) => {
+          return <FriendResultCard key={index}
+                                   name={friend.name}
+                                   id={friend.id}
+                                   configuredDays={0}
+                                   onRemove={removeFriend}
+          />;
+        })}
       </div>
     </div>
   );

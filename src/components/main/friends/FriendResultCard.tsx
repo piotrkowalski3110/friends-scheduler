@@ -1,15 +1,9 @@
-import React from "react";
 import { Trash2, User } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import React from "react";
+import { IFriend } from "@/types/friend";
 
-interface IFriendResultCard {
-  id: string,
-  name: string,
-  configuredDays: number,
-  onRemove: (id: string) => void
-}
-
-const FriendResultCard: React.FC<IFriendResultCard> = ({id, name, configuredDays, onRemove}) => {
+const FriendResultCard: React.FC<IFriend> = ({id, name, workingHours, onRemove}) => {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex flex-row p-4 border rounded-2xl items-center bg-white dark:bg-[#1c1c1c] justify-between">
@@ -21,12 +15,12 @@ const FriendResultCard: React.FC<IFriendResultCard> = ({id, name, configuredDays
           </Avatar>
           <div className="flex flex-col text-xs">
             <p className="font-semibold">{name}</p>
-            <p>{configuredDays} days configured</p>
+            <p>{workingHours?.length} days configured</p>
           </div>
         </div>
         <div
           className="flex flex-row justify-center items-center size-8 bg-[#f3f3f3] dark:bg-[#151515] border rounded-2xl hover:text-[#d4183d]"
-          onClick={() => onRemove(id)}>
+          onClick={() => onRemove?.(id)}>
           <Trash2 size={16}/>
         </div>
       </div>

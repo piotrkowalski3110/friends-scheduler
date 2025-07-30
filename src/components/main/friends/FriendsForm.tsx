@@ -7,6 +7,7 @@ import { Plus } from 'lucide-react';
 import { useState } from 'react';
 import FriendResultCard from '@/components/main/friends/FriendResultCard';
 import { IFriend } from '@/types/friend';
+import NoFriendsAdded from '@/components/main/friends/NoFriendsAdded';
 
 const FriendsForm = () => {
   const [friends, setFriends] = useState<IFriend[]>([]);
@@ -19,7 +20,7 @@ const FriendsForm = () => {
       {
         id: crypto.randomUUID(),
         name: inputValue,
-        workingHours: null,
+        workingHours: [],
         onRemove: removeFriend,
       },
     ]);
@@ -31,7 +32,7 @@ const FriendsForm = () => {
   };
 
   return (
-    <div className="flex w-full flex-col gap-8 rounded-2xl border bg-[#f3f3f3] p-4 dark:bg-[#151515]">
+    <div className="flex w-full flex-col gap-8 rounded-2xl border bg-[#f3f3f3] px-4 py-6 dark:bg-[#151515]">
       <div className="flex flex-col gap-2">
         <p className="font-semibold">Friends</p>
         <p className="opacity-65">Add your friends and click on their names to manage their working hours</p>
@@ -55,17 +56,21 @@ const FriendsForm = () => {
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        {friends.map((friend) => {
-          return (
-            <FriendResultCard
-              key={friend.id}
-              name={friend.name}
-              id={friend.id}
-              workingHours={friend.workingHours}
-              onRemove={removeFriend}
-            />
-          );
-        })}
+        {friends.length > 0 ? (
+          friends.map((friend) => {
+            return (
+              <FriendResultCard
+                key={friend.id}
+                name={friend.name}
+                id={friend.id}
+                workingHours={friend.workingHours}
+                onRemove={removeFriend}
+              />
+            );
+          })
+        ) : (
+          <NoFriendsAdded />
+        )}
       </div>
     </div>
   );

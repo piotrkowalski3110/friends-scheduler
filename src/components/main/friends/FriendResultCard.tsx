@@ -15,11 +15,11 @@ const FriendResultCard: React.FC<IFriend> = ({ id, name, workingHours, onRemove 
           </Avatar>
           <div className="flex flex-col text-xs">
             <p className="font-semibold">{name}</p>
-            <p>{workingHours?.length} days configured</p>
+            <p>{workingHours.length} days configured</p>
           </div>
         </div>
         <div
-          className="flex size-8 flex-row items-center justify-center rounded-2xl border bg-[#f3f3f3] hover:text-[#d4183d] dark:bg-[#151515]"
+          className="flex size-8 flex-row items-center justify-center rounded-2xl border bg-[#f3f3f3] duration-200 hover:text-[#d4183d] dark:bg-[#151515]"
           onClick={() => onRemove?.(id)}
         >
           <Trash2 size={16} />

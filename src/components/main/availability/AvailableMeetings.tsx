@@ -1,5 +1,3 @@
-const AvailableMeetings = () => {
-
-}
+const AvailableMeetings = () => {};
 
 export default AvailableMeetings;

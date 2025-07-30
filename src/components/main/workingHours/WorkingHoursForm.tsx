@@ -1,5 +1,3 @@
-const WorkingHoursForm = () => {
-
-}
+const WorkingHoursForm = () => {};
 
 export default WorkingHoursForm;

@@ -14,6 +14,8 @@ interface IWeekDayDropdown {
 }
 
 export const WeekDaysDropdown: React.FC<IWeekDayDropdown> = ({ weekDay, setWeekDay }) => {
+  const WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -23,13 +25,11 @@ export const WeekDaysDropdown: React.FC<IWeekDayDropdown> = ({ weekDay, setWeekD
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuRadioGroup value={weekDay} onValueChange={setWeekDay}>
-          <DropdownMenuRadioItem value="Monday">Monday</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="Tuesday">Tuesday</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="Wednesday">Wednesday</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="Thursday">Thursday</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="Friday">Friday</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="Saturday">Saturday</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="Sunday">Sunday</DropdownMenuRadioItem>
+          {WEEKDAYS.map((day) => (
+            <DropdownMenuRadioItem key={day} value={day}>
+              {day}
+            </DropdownMenuRadioItem>
+          ))}
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>

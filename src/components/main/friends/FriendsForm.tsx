@@ -3,32 +3,24 @@
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
-import { Plus } from 'lucide-react';
 import { useState } from 'react';
 import FriendResultCard from '@/components/main/friends/FriendResultCard';
-import { IFriend } from '@/types/friend';
 import NoFriendsAdded from '@/components/main/friends/NoFriendsAdded';
+import { Plus } from 'lucide-react';
+import { useFriendsStore } from '@/stores';
 
 const FriendsForm = () => {
-  const [friends, setFriends] = useState<IFriend[]>([]);
   const [inputValue, setInputValue] = useState<string>('');
+  const { friends, addFriend } = useFriendsStore();
 
   const updateFriendsList = () => {
     if (!inputValue.trim()) return null;
-    setFriends((prevFriends) => [
-      ...prevFriends,
-      {
-        id: crypto.randomUUID(),
-        name: inputValue,
-        workingHours: [],
-        onRemove: removeFriend,
-      },
-    ]);
+    addFriend({
+      id: crypto.randomUUID(),
+      name: inputValue,
+      workingHours: [],
+    });
     setInputValue('');
-  };
-
-  const removeFriend = (id: string) => {
-    setFriends((prevFriends) => prevFriends.filter((friend) => friend.id !== id));
   };
 
   return (
@@ -58,15 +50,7 @@ const FriendsForm = () => {
       <div className="flex flex-col gap-2">
         {friends.length > 0 ? (
           friends.map((friend) => {
-            return (
-              <FriendResultCard
-                key={friend.id}
-                name={friend.name}
-                id={friend.id}
-                workingHours={friend.workingHours}
-                onRemove={removeFriend}
-              />
-            );
+            return <FriendResultCard key={friend.id} name={friend.name} id={friend.id} workingHours={friend.workingHours} />;
           })
         ) : (
           <NoFriendsAdded />

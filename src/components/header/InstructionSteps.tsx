@@ -4,7 +4,7 @@ import { Calendar, Clock, Users } from 'lucide-react';
 export const InstructionSteps: IInstructionStep[] = [
   {
     title: '1. Add Friends',
-    description: 'Add your friends using the "Add Person" button and click on their names to select them',
+    description: 'Add your friend using the "Add Person" button and click on their names to select them',
     icon: <Users size={16} />,
   },
   {

@@ -12,8 +12,8 @@ const FriendResultCard: React.FC<IFriend> = ({ id, name, availabilityHours }) =>
     <div className="flex flex-col gap-2" onClick={() => selectFriend(id)}>
       <div
         className={cn(
-          'flex flex-row items-center justify-between rounded-2xl border bg-white p-4 dark:bg-[#1c1c1c]',
-          selectedFriend?.id === id && 'border-white',
+          'flex flex-row items-center justify-between rounded-2xl border bg-white p-4 duration-200 dark:bg-[#1c1c1c]',
+          selectedFriend?.id === id && 'border-black dark:border-white',
         )}
       >
         <div className="flex flex-row gap-4">

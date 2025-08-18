@@ -19,7 +19,7 @@ export const WeekDaysDropdown: React.FC<IWeekDayDropdown> = ({ weekDay, setWeekD
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button className="w-28" variant="outline">
+        <Button className="w-28 max-[380px]:w-full" variant="outline">
           {weekDay || 'Week Day'}
         </Button>
       </DropdownMenuTrigger>

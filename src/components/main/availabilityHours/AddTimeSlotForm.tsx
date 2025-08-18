@@ -1,6 +1,6 @@
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { WeekDaysDropdown } from '@/components/main/workingHours/WeekDaysDropdown';
+import { WeekDaysDropdown } from '@/components/main/availabilityHours/WeekDaysDropdown';
 import React from 'react';
 
 export const AddTimeSlotForm = () => {

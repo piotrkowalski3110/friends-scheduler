@@ -1,7 +1,7 @@
 import ModeToggle from '@/components/themes/ModeToggle';
 import Header from '@/components/header/Header';
 import FriendsForm from '@/components/main/friends/FriendsForm';
-import WorkingHoursForm from '@/components/main/workingHours/WorkingHoursForm';
+import AvailabilityHoursForm from '@/components/main/availabilityHours/AvailabilityHoursForm';
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
         </div>
         <div className="flex w-full flex-row justify-between gap-6 px-4 py-6 max-sm:flex-col">
           <FriendsForm />
-          <WorkingHoursForm />
+          <AvailabilityHoursForm />
         </div>
       </div>
     </div>

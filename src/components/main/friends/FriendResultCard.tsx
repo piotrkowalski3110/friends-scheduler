@@ -5,7 +5,7 @@ import { IFriend } from '@/types/friend';
 import { cn } from '@/lib/utils';
 import { useFriendsStore } from '@/stores';
 
-const FriendResultCard: React.FC<IFriend> = ({ id, name, workingHours }) => {
+const FriendResultCard: React.FC<IFriend> = ({ id, name, availabilityHours }) => {
   const { removeFriend, selectFriend, selectedFriend } = useFriendsStore();
 
   return (
@@ -24,7 +24,7 @@ const FriendResultCard: React.FC<IFriend> = ({ id, name, workingHours }) => {
           </Avatar>
           <div className="flex flex-col text-xs">
             <p className="font-semibold">{name}</p>
-            <p>{workingHours.length} days configured</p>
+            <p>{availabilityHours.length} days configured</p>
           </div>
         </div>
         <div

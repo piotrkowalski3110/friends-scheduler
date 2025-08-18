@@ -8,7 +8,7 @@ export const InstructionSteps: IInstructionStep[] = [
     icon: <Users size={16} />,
   },
   {
-    title: '2. Set Working Hours',
+    title: '2. Set Availability Hours',
     description: 'Select a friend and add their available hours for each day of the week',
     icon: <Clock size={16} />,
   },

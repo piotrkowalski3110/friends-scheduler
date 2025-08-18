@@ -18,7 +18,7 @@ const FriendsForm = () => {
     addFriend({
       id: crypto.randomUUID(),
       name: inputValue,
-      workingHours: [],
+      availabilityHours: [],
     });
     setInputValue('');
   };
@@ -27,7 +27,7 @@ const FriendsForm = () => {
     <div className="flex w-full flex-col gap-8 rounded-2xl border bg-[#f3f3f3] px-4 py-6 dark:bg-[#151515]">
       <div className="flex flex-col gap-2">
         <p className="font-semibold">Friends</p>
-        <p className="opacity-65">Add your friends and click on their names to manage their working hours</p>
+        <p className="opacity-65">Add your friends and click on their names to manage their availability hours</p>
       </div>
       <div className="flex flex-col gap-2">
         <Label className="font-semibold" htmlFor="friendName">
@@ -50,7 +50,9 @@ const FriendsForm = () => {
       <div className="flex flex-col gap-2">
         {friends.length > 0 ? (
           friends.map((friend) => {
-            return <FriendResultCard key={friend.id} name={friend.name} id={friend.id} workingHours={friend.workingHours} />;
+            return (
+              <FriendResultCard key={friend.id} name={friend.name} id={friend.id} availabilityHours={friend.availabilityHours} />
+            );
           })
         ) : (
           <NoFriendsAdded />

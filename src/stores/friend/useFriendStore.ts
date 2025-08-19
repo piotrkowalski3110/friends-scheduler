@@ -17,7 +17,7 @@ export const useFriendsStore = create<FriendStore>((set) => ({
   selectedFriend: null,
   addFriend: (friend) => set((state) => ({ friends: [...state.friends, friend] })),
   removeFriend: (id) => set((state) => ({ friends: state.friends.filter((friend) => friend.id !== id) })),
-  selectFriend: (id) => set((state) => ({ selectedFriend: state.friends.find((friend) => friend.id === id) || null })),
+  selectFriend: (id) => set((state) => ({ selectedFriend: state.friends.find((friend) => friend.id === id) })),
   addTimeSlot: (timeSlot) =>
     set((state) => {
       if (!state.selectedFriend) return state;

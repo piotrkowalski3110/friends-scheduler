@@ -3,6 +3,7 @@
 import { Clock } from 'lucide-react';
 import { useFriendsStore } from '@/stores';
 import { AddTimeSlotForm } from '@/components/main/availabilityHours/AddTimeSlotForm';
+import { TimeSlotCard } from '@/components/main/availabilityHours/TimeSlotCard';
 
 const AvailabilityHoursForm = () => {
   const { selectedFriend } = useFriendsStore();
@@ -19,7 +20,16 @@ const AvailabilityHoursForm = () => {
           </div>
         </div>
       )}
-      {selectedFriend && <AddTimeSlotForm />}
+      {selectedFriend && (
+        <>
+          <AddTimeSlotForm />
+          <div className="flex flex-col gap-2">
+            {selectedFriend.availabilityHours.map((timeSlot) => {
+              return <TimeSlotCard key={timeSlot.id} {...timeSlot} />;
+            })}
+          </div>
+        </>
+      )}
     </div>
   );
 };

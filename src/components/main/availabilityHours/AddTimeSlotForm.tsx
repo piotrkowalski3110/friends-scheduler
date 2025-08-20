@@ -44,3 +44,5 @@ export const AddTimeSlotForm = () => {
     </div>
   );
 };
+
+export default AddTimeSlotForm;

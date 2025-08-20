@@ -2,7 +2,7 @@ import { Info } from 'lucide-react';
 import InstructionStepCard from '@/components/header/InstructionStepCard';
 import { InstructionSteps } from '@/components/header/InstructionSteps';
 
-const Header = () => {
+const Header = async () => {
   return (
     <>
       <div className="w-full bg-[#f3f3f3] dark:bg-[#151515]">

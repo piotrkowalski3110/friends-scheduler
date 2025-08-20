@@ -6,7 +6,7 @@ export interface IInstructionStep {
   icon: React.ReactNode;
 }
 
-const InstructionStepCard: React.FC<IInstructionStep> = ({ title, description, icon }) => {
+const InstructionStepCard: React.FC<IInstructionStep> = async ({ title, description, icon }) => {
   return (
     <div className="w-full">
       <div className="flex flex-row items-center gap-2">

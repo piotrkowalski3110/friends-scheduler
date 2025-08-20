@@ -3,7 +3,7 @@ import Header from '@/components/header/Header';
 import FriendsForm from '@/components/main/friends/FriendsForm';
 import AvailabilityHoursForm from '@/components/main/availabilityHours/AvailabilityHoursForm';
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className="bg-background">
       <Header />

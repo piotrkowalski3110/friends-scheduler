@@ -35,3 +35,5 @@ export const WeekDaysDropdown: React.FC<IWeekDayDropdown> = ({ weekDay, setWeekD
     </DropdownMenu>
   );
 };
+
+export default WeekDaysDropdown;

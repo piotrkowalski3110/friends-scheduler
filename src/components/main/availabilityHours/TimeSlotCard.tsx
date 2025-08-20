@@ -23,3 +23,5 @@ export const TimeSlotCard: React.FC<ITimeSlot> = ({ id, weekDay, startTime, endT
     </div>
   );
 };
+
+export default TimeSlotCard;

@@ -4,48 +4,54 @@ import { ITimeSlot } from '@/types/dates';
 
 type FriendStore = {
   friends: IFriend[];
-  selectedFriend: IFriend | null;
+  selectedFriendId: string | null;
   addFriend: (friend: IFriend) => void;
   removeFriend: (id: string) => void;
-  selectFriend: (id: string) => void;
+  selectFriend: (id: string | null) => void;
   addTimeSlot: (timeSlot: ITimeSlot) => void;
   removeTimeSlot: (id: string) => void;
 };
 
 export const useFriendsStore = create<FriendStore>((set) => ({
   friends: [],
-  selectedFriend: null,
+  selectedFriendId: null,
   addFriend: (friend) => set((state) => ({ friends: [...state.friends, friend] })),
-  removeFriend: (id) => set((state) => ({ friends: state.friends.filter((friend) => friend.id !== id) })),
-  selectFriend: (id) => set((state) => ({ selectedFriend: state.friends.find((friend) => friend.id === id) })),
+  removeFriend: (id) =>
+    set((state) => ({
+      friends: state.friends.filter((friend) => friend.id !== id),
+      selectedFriendId: state.selectedFriendId === id ? null : state.selectedFriendId,
+    })),
+  selectFriend: (id) => set({ selectedFriendId: id }),
   addTimeSlot: (timeSlot) =>
     set((state) => {
-      if (!state.selectedFriend) return state;
+      if (!state.selectedFriendId) return state;
 
-      const updatedFriend = {
-        ...state.selectedFriend,
-        availabilityHours: [...(state.selectedFriend.availabilityHours || []), timeSlot],
-      };
+      const friends = state.friends.map((friend) => {
+        if (friend.id === state.selectedFriendId) {
+          return {
+            ...friend,
+            availabilityHours: [...(friend.availabilityHours || []), timeSlot],
+          };
+        }
+        return friend;
+      });
 
-      return {
-        ...state,
-        selectedFriend: updatedFriend,
-        friends: state.friends.map((friend) => (friend.id === updatedFriend.id ? updatedFriend : friend)),
-      };
+      return { friends };
     }),
   removeTimeSlot: (id) =>
     set((state) => {
-      if (!state.selectedFriend) return state;
+      if (!state.selectedFriendId) return state;
 
-      const updatedFriend = {
-        ...state.selectedFriend,
-        availabilityHours: (state.selectedFriend.availabilityHours || []).filter((slot) => slot.id !== id),
-      };
+      const friends = state.friends.map((friend) => {
+        if (friend.id === state.selectedFriendId) {
+          return {
+            ...friend,
+            availabilityHours: (friend.availabilityHours || []).filter((slot) => slot.id !== id),
+          };
+        }
+        return friend;
+      });
 
-      return {
-        ...state,
-        selectedFriend: updatedFriend,
-        friends: state.friends.map((friend) => (friend.id === updatedFriend.id ? updatedFriend : friend)),
-      };
+      return { friends };
     }),
 }));

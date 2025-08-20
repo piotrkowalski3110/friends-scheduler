@@ -6,7 +6,9 @@ import { AddTimeSlotForm } from '@/components/main/availabilityHours/AddTimeSlot
 import { TimeSlotCard } from '@/components/main/availabilityHours/TimeSlotCard';
 
 const AvailabilityHoursForm = () => {
-  const { selectedFriend } = useFriendsStore();
+  const { friends, selectedFriendId } = useFriendsStore();
+  const selectedFriend = friends.find((friend) => friend.id === selectedFriendId);
+
   return (
     <div className="flex w-full flex-col gap-8 rounded-2xl border bg-[#f3f3f3] px-4 py-6 dark:bg-[#151515]">
       <div className="flex flex-col gap-2">
@@ -24,7 +26,7 @@ const AvailabilityHoursForm = () => {
         <>
           <AddTimeSlotForm />
           <div className="flex flex-col gap-2">
-            {selectedFriend.availabilityHours.map((timeSlot) => {
+            {selectedFriend.availabilityHours?.map((timeSlot) => {
               return <TimeSlotCard key={timeSlot.id} {...timeSlot} />;
             })}
           </div>

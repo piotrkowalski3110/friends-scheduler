@@ -9,10 +9,7 @@ const FriendResultCard: React.FC<IFriend> = ({ id, name, availabilityHours }) =>
   const { removeFriend, selectFriend, selectedFriendId } = useFriendsStore();
 
   return (
-    <div
-      className="flex flex-col gap-2"
-      onClick={() => (selectedFriendId === id ? selectFriend(null) : selectFriend(id))}
-    >
+    <div className="flex flex-col gap-2" onClick={() => (selectedFriendId === id ? selectFriend(null) : selectFriend(id))}>
       <div
         className={cn(
           'flex flex-row items-center justify-between rounded-2xl border bg-white p-4 duration-200 dark:bg-[#1c1c1c]',

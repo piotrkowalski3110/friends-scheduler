@@ -1,6 +1,6 @@
 import { Clock } from 'lucide-react';
 
-const SummaryTimeSlot = () => {
+const SummaryTimeSlotCard = () => {
   return (
     <div className="grid grid-cols-1 gap-4">
       <div className="rounded-xl border bg-white p-4 dark:bg-[#1c1c1c]">
@@ -23,4 +23,4 @@ const SummaryTimeSlot = () => {
   );
 };
 
-export default SummaryTimeSlot;
+export default SummaryTimeSlotCard;

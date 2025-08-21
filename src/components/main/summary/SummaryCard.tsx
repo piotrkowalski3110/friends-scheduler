@@ -1,7 +1,7 @@
 'use client';
 
 import { useFriendsStore } from '@/stores';
-import SummaryTimeSlot from '@/components/main/summary/SummaryTimeSlot';
+import SummaryTimeSlotCard from '@/components/main/summary/SummaryTimeSlotCard';
 
 const SummaryCard = () => {
   const { friends } = useFriendsStore();
@@ -12,8 +12,8 @@ const SummaryCard = () => {
         <p className="opacity-65">{friends.length} friends are available in 0 time slots</p>
       </div>
       <div className="flex flex-col gap-2">
-        <SummaryTimeSlot />
-        <SummaryTimeSlot />
+        <SummaryTimeSlotCard />
+        <SummaryTimeSlotCard />
       </div>
     </div>
   );

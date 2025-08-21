@@ -13,6 +13,7 @@ const AvailabilityHoursForm = () => {
     <div className="flex w-full flex-col gap-8 rounded-2xl border bg-[#f3f3f3] px-4 py-6 dark:bg-[#151515]">
       <div className="flex flex-col gap-2">
         <p className="font-semibold">Availability Hours</p>
+        <p className="opacity-65">Add available time slots for each day</p>
       </div>
       {!selectedFriend && (
         <div className="flex h-full flex-col items-center justify-center">

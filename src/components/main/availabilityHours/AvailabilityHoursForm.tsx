@@ -3,7 +3,7 @@
 import { Clock } from 'lucide-react';
 import { useFriendsStore } from '@/stores';
 import { AddTimeSlotForm } from '@/components/main/availabilityHours/AddTimeSlotForm';
-import TimeSlotCardNew from '@/components/main/availabilityHours/TimeSlotCardNew';
+import TimeSlotCardNew from '@/components/main/availabilityHours/TimeSlotCard';
 import { ITimeSlot } from '@/types/dates';
 
 const AvailabilityHoursForm = () => {

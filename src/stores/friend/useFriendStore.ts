@@ -23,35 +23,17 @@ export const useFriendsStore = create<FriendStore>((set) => ({
     })),
   selectFriend: (id) => set({ selectedFriendId: id }),
   addTimeSlot: (timeSlot) =>
-    set((state) => {
-      if (!state.selectedFriendId) return state;
-
-      const friends = state.friends.map((friend) => {
-        if (friend.id === state.selectedFriendId) {
-          return {
-            ...friend,
-            availabilityHours: [...(friend.availabilityHours || []), timeSlot],
-          };
-        }
-        return friend;
-      });
-
-      return { friends };
-    }),
+    set((state) => ({
+      friends: state.friends.map((friend) =>
+        friend.id === state.selectedFriendId ? { ...friend, availabilityHours: [...friend.availabilityHours, timeSlot] } : friend,
+      ),
+    })),
   removeTimeSlot: (id) =>
-    set((state) => {
-      if (!state.selectedFriendId) return state;
-
-      const friends = state.friends.map((friend) => {
-        if (friend.id === state.selectedFriendId) {
-          return {
-            ...friend,
-            availabilityHours: (friend.availabilityHours || []).filter((slot) => slot.id !== id),
-          };
-        }
-        return friend;
-      });
-
-      return { friends };
-    }),
+    set((state) => ({
+      friends: state.friends.map((friend) =>
+        friend.id === state.selectedFriendId
+          ? { ...friend, availabilityHours: friend.availabilityHours.filter((timeSlot) => timeSlot.id !== id) }
+          : friend,
+      ),
+    })),
 }));

@@ -1,14 +1,9 @@
 import { Clock, Trash2 } from 'lucide-react';
 import React from 'react';
-import { ITimeSlot } from '@/types/dates';
 import { useFriendsStore } from '@/stores';
+import { ITimeSlotCardProps } from '@/types/friend';
 
-interface TimeSlotCardProps {
-  weekDay: string;
-  timeSlots: ITimeSlot[];
-}
-
-const TimeSlotCard: React.FC<TimeSlotCardProps> = ({ weekDay, timeSlots }) => {
+const TimeSlotCard: React.FC<ITimeSlotCardProps> = ({ weekDay, timeSlots }) => {
   const { removeTimeSlot } = useFriendsStore();
 
   return (

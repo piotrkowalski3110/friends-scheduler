@@ -5,3 +5,8 @@ export interface IFriend {
   name: string;
   availabilityHours: ITimeSlot[];
 }
+
+export interface ITimeSlotCardProps {
+  weekDay: string;
+  timeSlots: ITimeSlot[];
+}

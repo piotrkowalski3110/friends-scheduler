@@ -7,6 +7,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import React from 'react';
+import { WeekDays } from '@/types/dates';
 
 interface IWeekDayDropdown {
   weekDay: string;
@@ -14,8 +15,6 @@ interface IWeekDayDropdown {
 }
 
 export const WeekDaysDropdown: React.FC<IWeekDayDropdown> = ({ weekDay, setWeekDay }) => {
-  const WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -25,7 +24,7 @@ export const WeekDaysDropdown: React.FC<IWeekDayDropdown> = ({ weekDay, setWeekD
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuRadioGroup value={weekDay} onValueChange={setWeekDay}>
-          {WEEKDAYS.map((day) => (
+          {WeekDays.map((day) => (
             <DropdownMenuRadioItem key={day} value={day}>
               {day}
             </DropdownMenuRadioItem>

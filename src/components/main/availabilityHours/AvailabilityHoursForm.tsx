@@ -4,13 +4,11 @@ import { Clock } from 'lucide-react';
 import { useFriendsStore } from '@/stores';
 import { AddTimeSlotForm } from '@/components/main/availabilityHours/AddTimeSlotForm';
 import TimeSlotCardNew from '@/components/main/availabilityHours/TimeSlotCard';
-import { ITimeSlot } from '@/types/dates';
+import { ITimeSlot, WeekDays } from '@/types/dates';
 
 const AvailabilityHoursForm = () => {
   const { friends, selectedFriendId } = useFriendsStore();
   const selectedFriend = friends.find((friend) => friend.id === selectedFriendId);
-
-  const weekDaysOrder = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
   const groupedTimeSlots =
     selectedFriend?.availabilityHours?.reduce<Record<string, ITimeSlot[]>>((acc, timeSlot) => {
@@ -26,8 +24,8 @@ const AvailabilityHoursForm = () => {
   });
 
   const sortedDays = Object.keys(groupedTimeSlots).sort((a, b) => {
-    const aIndex = weekDaysOrder.indexOf(a);
-    const bIndex = weekDaysOrder.indexOf(b);
+    const aIndex = WeekDays.indexOf(a);
+    const bIndex = WeekDays.indexOf(b);
     return aIndex - bIndex;
   });
 

@@ -3,9 +3,10 @@ import { Button } from '@/components/ui/button';
 import { WeekDaysDropdown } from '@/components/main/availabilityHours/WeekDaysDropdown';
 import React from 'react';
 import { useFriendsStore } from '@/stores';
+import { WeekDays } from '@/types/dates';
 
 export const AddTimeSlotForm = () => {
-  const [weekDay, setWeekDay] = React.useState('Monday');
+  const [weekDay, setWeekDay] = React.useState(WeekDays[0]);
   const [startTime, setStartTime] = React.useState('08:00');
   const [endTime, setEndTime] = React.useState('16:00');
   const { addTimeSlot, friends, selectedFriendId } = useFriendsStore();

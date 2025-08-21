@@ -14,7 +14,7 @@ export default async function Home() {
           <p className="text-2xl font-bold">Meeting Scheduler</p>
           <ModeToggle />
         </div>
-        <div className="flex w-full flex-row justify-between gap-6 px-4 py-6 max-sm:flex-col">
+        <div className="flex w-full flex-row justify-between gap-6 px-4 py-6 max-lg:flex-col">
           <FriendsForm />
           <AvailabilityHoursForm />
           <SummaryCard />

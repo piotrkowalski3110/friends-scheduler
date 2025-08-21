@@ -8,8 +8,14 @@ export const AddTimeSlotForm = () => {
   const [weekDay, setWeekDay] = React.useState('Monday');
   const [startTime, setStartTime] = React.useState('08:00');
   const [endTime, setEndTime] = React.useState('16:00');
-  const { addTimeSlot } = useFriendsStore();
-  const isDisabled = startTime > endTime;
+  const { addTimeSlot, friends, selectedFriendId } = useFriendsStore();
+
+  const selectedFriend = friends.find((friend) => friend.id === selectedFriendId);
+  const existingDaySlots = (selectedFriend?.availabilityHours || []).filter((slot) => slot.weekDay === weekDay);
+
+  const isDisabledTimeOrder = startTime > endTime;
+  const hasOverlap = existingDaySlots.some((slot) => startTime <= slot.endTime && endTime >= slot.startTime);
+  const isDisabled = isDisabledTimeOrder || hasOverlap;
 
   const createTimeSlot = () => {
     if (isDisabled) return;
@@ -28,14 +34,14 @@ export const AddTimeSlotForm = () => {
         <WeekDaysDropdown weekDay={weekDay} setWeekDay={setWeekDay} />
         <Input
           type="time"
-          id="time-picker"
+          id="start-time-picker"
           defaultValue="08:00"
           onChange={(e) => setStartTime(e.target.value)}
           className="bg-background hover:bg-accent dark:hover:bg-input/50 focus-visible:border-input text-center focus-visible:ring-0"
         />
         <Input
           type="time"
-          id="time-picker"
+          id="end-time-picker"
           defaultValue="16:00"
           onChange={(e) => setEndTime(e.target.value)}
           className="bg-background hover:bg-accent dark:hover:bg-input/50 focus-visible:border-input text-center focus-visible:ring-0"

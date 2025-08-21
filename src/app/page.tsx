@@ -3,6 +3,7 @@ import Header from '@/components/header/Header';
 import FriendsForm from '@/components/main/friends/FriendsForm';
 import AvailabilityHoursForm from '@/components/main/availabilityHours/AvailabilityHoursForm';
 import SummaryCard from '@/components/main/summary/SummaryCard';
+import CustomFooter from '@/components/footer/CustomFooter';
 
 export default async function Home() {
   return (
@@ -19,6 +20,7 @@ export default async function Home() {
           <SummaryCard />
         </div>
       </div>
+      <CustomFooter />
     </div>
   );
 }

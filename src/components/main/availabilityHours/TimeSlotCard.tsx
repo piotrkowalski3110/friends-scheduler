@@ -32,9 +32,12 @@ const TimeSlotCard: React.FC<TimeSlotCardProps> = ({ weekDay, timeSlots }) => {
               </span>
             </div>
             <div>
-              <button onClick={() => removeTimeSlot(timeSlot.id)}>
-                <Trash2 size={16} className="text-gray-500 duration-200 hover:text-[#d4183d]" />
-              </button>
+              <div
+                className="flex size-8 flex-row items-center justify-center rounded-2xl border bg-[#f3f3f3] duration-200 hover:text-[#d4183d] dark:bg-[#151515]"
+                onClick={() => removeTimeSlot(timeSlot.id)}
+              >
+                <Trash2 size={16} />
+              </div>
             </div>
           </div>
         ))}

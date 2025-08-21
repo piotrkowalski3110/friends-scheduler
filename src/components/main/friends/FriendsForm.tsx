@@ -12,9 +12,10 @@ import { useFriendsStore } from '@/stores';
 const FriendsForm = () => {
   const [inputValue, setInputValue] = useState<string>('');
   const { friends, addFriend } = useFriendsStore();
+  const isNameEmpty = !inputValue.trim();
 
   const updateFriendsList = () => {
-    if (!inputValue.trim()) return null;
+    if (isNameEmpty) return null;
     addFriend({
       id: crypto.randomUUID(),
       name: inputValue,
@@ -42,7 +43,7 @@ const FriendsForm = () => {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
           />
-          <Button onClick={updateFriendsList}>
+          <Button onClick={updateFriendsList} disabled={isNameEmpty}>
             <Plus size={16} />
           </Button>
         </div>

@@ -2,6 +2,7 @@ import ModeToggle from '@/components/themes/ModeToggle';
 import Header from '@/components/header/Header';
 import FriendsForm from '@/components/main/friends/FriendsForm';
 import AvailabilityHoursForm from '@/components/main/availabilityHours/AvailabilityHoursForm';
+import SummaryCard from '@/components/main/summary/SummaryCard';
 
 export default async function Home() {
   return (
@@ -15,6 +16,7 @@ export default async function Home() {
         <div className="flex w-full flex-row justify-between gap-6 px-4 py-6 max-sm:flex-col">
           <FriendsForm />
           <AvailabilityHoursForm />
+          <SummaryCard />
         </div>
       </div>
     </div>

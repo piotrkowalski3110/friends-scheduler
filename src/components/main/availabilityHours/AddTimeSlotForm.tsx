@@ -9,8 +9,10 @@ export const AddTimeSlotForm = () => {
   const [startTime, setStartTime] = React.useState('08:00');
   const [endTime, setEndTime] = React.useState('16:00');
   const { addTimeSlot } = useFriendsStore();
+  const isDisabled = startTime > endTime;
 
   const createTimeSlot = () => {
+    if (isDisabled) return;
     addTimeSlot({
       id: crypto.randomUUID(),
       weekDay,
@@ -39,7 +41,9 @@ export const AddTimeSlotForm = () => {
           className="bg-background hover:bg-accent dark:hover:bg-input/50 focus-visible:border-input text-center focus-visible:ring-0"
         />
       </div>
-      <Button onClick={createTimeSlot}>Add Time Slot</Button>
+      <Button onClick={createTimeSlot} disabled={isDisabled}>
+        Add Time Slot
+      </Button>
     </div>
   );
 };

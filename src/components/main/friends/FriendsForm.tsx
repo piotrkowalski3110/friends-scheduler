@@ -5,8 +5,7 @@ import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import FriendResultCard from '@/components/main/friends/FriendResultCard';
-import NoFriendsAdded from '@/components/main/friends/NoFriendsAdded';
-import { Plus } from 'lucide-react';
+import { Plus, User } from 'lucide-react';
 import { useFriendsStore } from '@/stores';
 
 const FriendsForm = () => {
@@ -56,7 +55,11 @@ const FriendsForm = () => {
             );
           })
         ) : (
-          <NoFriendsAdded />
+          <div className="center flex flex-col items-center justify-center gap-1">
+            <User size={32} />
+            <p className="text-center opacity-65">No friends added yet!</p>
+            <p className="text-center opacity-65">Add your first friend to get started</p>
+          </div>
         )}
       </div>
     </div>

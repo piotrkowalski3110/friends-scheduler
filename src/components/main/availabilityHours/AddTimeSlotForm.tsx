@@ -17,7 +17,6 @@ export const AddTimeSlotForm = () => {
       startTime,
       endTime,
     });
-    console.log('Friends:', useFriendsStore.getState().friends);
   };
 
   return (

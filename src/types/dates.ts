@@ -6,5 +6,3 @@ export interface ITimeSlot {
 }
 
 export const WeekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-
-export type Interval = { start: number; end: number };

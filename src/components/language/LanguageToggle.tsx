@@ -21,7 +21,6 @@ const LanguageToggle = () => {
   return (
     <Button variant="outline" size="icon" onClick={toggleLanguage} aria-label="Toggle language">
       <Languages className="h-[1.2rem] w-[1.2rem]" />
-      <span className="sr-only">Toggle language</span>
     </Button>
   );
 };

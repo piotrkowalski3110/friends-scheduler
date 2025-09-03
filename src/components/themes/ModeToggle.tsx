@@ -31,7 +31,6 @@ const ModeToggle = () => {
       {theme === 'light' && <Sun className="h-[1.2rem] w-[1.2rem] scale-100 transition-all" />}
       {theme === 'dark' && <Moon className="h-[1.2rem] w-[1.2rem] scale-100 transition-all" />}
       {theme === 'system' && <LaptopMinimal className="h-[1.2rem] w-[1.2rem] scale-100 transition-all" />}
-      <span className="sr-only">Toggle theme</span>
     </Button>
   );
 };

@@ -1,18 +1,23 @@
 {
-  "HomePage": {
-    "title": "Hello world!"
-  },
   "Header": {
-    "title": "Meeting Scheduler",
-    "description": "Coordinate schedules with your friends to find the perfect meeting time",
+    "title": "Planer spotkań",
+    "description": "Koordynuj swoją dostępność ze znajomymi, aby znaleźć idealny termin spotkania",
     "instructions": {
-      "howToUse": "How to use",
-      "step1": "1. Add Friends",
-      "step1Description": "Add your friend using the \"Add Person\" button and click on their names to select them",
-      "step2": "2. Set Availability Hours",
-      "step2Description": "Select a friend and add their available hours for each day of the week",
-      "step3": "3. Find Available Times",
-      "step3Description": "View all available meeting times when everyone is free"
+      "howToUse": "Jak korzystać",
+      "step1": "1. Dodaj znajomych",
+      "step1Description": "Dodaj znajomych, używając przycisku \"Dodaj osobę\", a następnie kliknij ich imiona, aby ich wybrać",
+      "step2": "2. Ustaw godziny dostępności",
+      "step2Description": "Wybierz znajomego i dodaj godziny, w których jest dostępny w każdym dniu tygodnia",
+      "step3": "3. Znajdź dostępne terminy",
+      "step3Description": "Wyświetl wszystkie dostępne terminy spotkań, kiedy wszyscy są wolni"
     }
+  },
+  "Footer": {
+    "title": "Planer spotkań",
+    "description": "Stworzony, aby pomóc znajomym szybko znaleźć najlepszy czas na spotkanie",
+    "rightsReserved": "Wszelkie prawa zastrzeżone"
+  },
+  "MainBody": {
+    "title": "Planer spotkań"
   }
 }

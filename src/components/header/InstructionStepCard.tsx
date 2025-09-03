@@ -1,19 +1,22 @@
 import React from 'react';
+import { getTranslations } from 'next-intl/server';
 
 export interface IInstructionStep {
-  title: string;
-  description: string;
+  titleIntlCode: string;
+  descriptionIntlCode: string;
   icon: React.ReactNode;
 }
 
-const InstructionStepCard: React.FC<IInstructionStep> = async ({ title, description, icon }) => {
+const InstructionStepCard: React.FC<IInstructionStep> = async ({ titleIntlCode, descriptionIntlCode, icon }) => {
+  const t = await getTranslations('Header.instructions');
+
   return (
     <div className="w-full">
       <div className="flex flex-row items-center gap-2">
         {icon}
-        <p>{title}</p>
+        <p>{t(titleIntlCode)}</p>
       </div>
-      <p className="opacity-65">{description}</p>
+      <p className="opacity-65">{t(descriptionIntlCode)}</p>
     </div>
   );
 };

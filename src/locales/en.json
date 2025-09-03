@@ -1,0 +1,18 @@
+{
+  "HomePage": {
+    "title": "Hello world!"
+  },
+  "Header": {
+    "title": "Meeting Scheduler",
+    "description": "Coordinate schedules with your friends to find the perfect meeting time",
+    "instructions": {
+      "howToUse": "How to use",
+      "step1": "1. Add Friends",
+      "step1Description": "Add your friend using the \"Add Person\" button and click on their names to select them",
+      "step2": "2. Set Availability Hours",
+      "step2Description": "Select a friend and add their available hours for each day of the week",
+      "step3": "3. Find Available Times",
+      "step3Description": "View all available meeting times when everyone is free"
+    }
+  }
+}

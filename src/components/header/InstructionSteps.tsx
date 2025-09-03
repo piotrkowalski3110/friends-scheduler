@@ -3,18 +3,18 @@ import { Calendar, Clock, Users } from 'lucide-react';
 
 export const InstructionSteps: IInstructionStep[] = [
   {
-    title: '1. Add Friends',
-    description: 'Add your friend using the "Add Person" button and click on their names to select them',
+    titleIntlCode: 'step1',
+    descriptionIntlCode: 'step1Description',
     icon: <Users size={16} />,
   },
   {
-    title: '2. Set Availability Hours',
-    description: 'Select a friend and add their available hours for each day of the week',
+    titleIntlCode: 'step2',
+    descriptionIntlCode: 'step2Description',
     icon: <Clock size={16} />,
   },
   {
-    title: '3. Find Available Times',
-    description: 'View all available meeting times when everyone is free',
+    titleIntlCode: 'step3',
+    descriptionIntlCode: 'step3Description',
     icon: <Calendar size={16} />,
   },
 ];

@@ -26,7 +26,8 @@
         "addFriendLabel": "Dodaj znajomego",
         "addFriendInputPlaceholder": "Wprowadź imię znajomego",
         "noFriendAddedTop": "Nie dodano żadnych znajomych!",
-        "noFriendAddedBottom": "Dodaj pierwszego znajomego, aby rozpocząć"
+        "noFriendAddedBottom": "Dodaj pierwszego znajomego, aby rozpocząć",
+        "daysConfigured": "d."
       },
       "availabilityCard": {
         "availabilityTitle": "Godziny dostępności",
@@ -41,6 +42,17 @@
       "summaryCard": {
         "summaryTitle": "Dostępne terminy spotkań"
       }
+    }
+  },
+  "dates": {
+    "weekdays": {
+      "Monday": "Poniedziałek",
+      "Tuesday": "Wtorek",
+      "Wednesday": "Środa",
+      "Thursday": "Czwartek",
+      "Friday": "Piątek",
+      "Saturday": "Sobota",
+      "Sunday": "Niedziela"
     }
   }
 }

@@ -26,7 +26,8 @@
         "addFriendLabel": "Add Friend",
         "addFriendInputPlaceholder": "Enter friend's name",
         "noFriendAddedTop": "No friends added yet!",
-        "noFriendAddedBottom": "Add your first friend to get started"
+        "noFriendAddedBottom": "Add your first friend to get started",
+        "daysConfigured": "d."
       },
       "availabilityCard": {
         "availabilityTitle": "Availability Hours",
@@ -41,6 +42,17 @@
       "summaryCard": {
         "summaryTitle": "Available Meeting Times"
       }
+    }
+  },
+  "dates": {
+    "weekdays": {
+      "Monday": "Monday",
+      "Tuesday": "Tuesday",
+      "Wednesday": "Wednesday",
+      "Thursday": "Thursday",
+      "Friday": "Friday",
+      "Saturday": "Saturday",
+      "Sunday": "Sunday"
     }
   }
 }

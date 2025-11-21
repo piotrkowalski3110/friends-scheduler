@@ -1,12 +1,14 @@
 import { Clock } from 'lucide-react';
 import React from 'react';
 import { ITimeSlotCardProps } from '@/types/friend';
+import { useTranslations } from 'next-intl';
 
 const SummaryTimeSlotCard: React.FC<ITimeSlotCardProps> = ({ weekDay, timeSlots }) => {
+  const t = useTranslations('dates.weekdays');
   return (
     <div className="rounded-xl border bg-white p-4 dark:bg-[#1c1c1c]">
       <div className="mb-3 flex items-center justify-between">
-        <p className="font-semibold">{weekDay}</p>
+        <p className="font-semibold">{t(weekDay)}</p>
         <span className="rounded-full border bg-white px-2 py-0.5 text-xs text-gray-600 dark:border-neutral-700 dark:bg-[#151515] dark:text-gray-300">
           {timeSlots.length}
         </span>

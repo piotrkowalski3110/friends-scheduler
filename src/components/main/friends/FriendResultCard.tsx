@@ -4,9 +4,11 @@ import React from 'react';
 import { IFriend } from '@/types/friend';
 import { cn } from '@/lib/utils';
 import { useFriendsStore } from '@/stores';
+import { useTranslations } from 'next-intl';
 
 const FriendResultCard: React.FC<IFriend> = ({ id, name, availabilityHours }) => {
   const { removeFriend, selectFriend, selectedFriendId } = useFriendsStore();
+  const t = useTranslations('MainBody.mainCards.friendsCard');
 
   return (
     <div className="flex flex-col gap-2" onClick={() => (selectedFriendId === id ? selectFriend(null) : selectFriend(id))}>
@@ -24,7 +26,9 @@ const FriendResultCard: React.FC<IFriend> = ({ id, name, availabilityHours }) =>
           </Avatar>
           <div className="flex flex-col text-xs">
             <p className="font-semibold">{name}</p>
-            <p>{availabilityHours.length} days configured</p>
+            <p>
+              {availabilityHours.length} {t('daysConfigured')}
+            </p>
           </div>
         </div>
         <div

@@ -8,6 +8,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import React from 'react';
 import { WeekDays } from '@/types/dates';
+import { useTranslations } from 'next-intl';
 
 interface IWeekDayDropdown {
   weekDay: string;
@@ -15,18 +16,19 @@ interface IWeekDayDropdown {
 }
 
 export const WeekDaysDropdown: React.FC<IWeekDayDropdown> = ({ weekDay, setWeekDay }) => {
+  const t = useTranslations('dates.weekdays');
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button className="w-28 max-[380px]:w-full" variant="outline">
-          {weekDay || 'Week Day'}
+          {weekDay ? t(weekDay) : 'Week Day'}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuRadioGroup value={weekDay} onValueChange={setWeekDay}>
           {WeekDays.map((day) => (
             <DropdownMenuRadioItem key={day} value={day}>
-              {day}
+              {t(day)}
             </DropdownMenuRadioItem>
           ))}
         </DropdownMenuRadioGroup>

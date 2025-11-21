@@ -7,11 +7,13 @@ import { useState } from 'react';
 import FriendResultCard from '@/components/main/friends/FriendResultCard';
 import { Plus, User } from 'lucide-react';
 import { useFriendsStore } from '@/stores';
+import { useTranslations } from 'next-intl';
 
 const FriendsForm = () => {
   const [inputValue, setInputValue] = useState<string>('');
   const { friends, addFriend } = useFriendsStore();
   const isNameEmpty = !inputValue.trim();
+  const t = useTranslations('MainBody.mainCards.friendsCard');
 
   const updateFriendsList = () => {
     if (isNameEmpty) return null;
@@ -26,18 +28,18 @@ const FriendsForm = () => {
   return (
     <div className="flex w-full flex-col gap-8 rounded-2xl border bg-[#f3f3f3] px-4 py-6 dark:bg-[#151515]">
       <div className="flex flex-col gap-2">
-        <p className="font-semibold">Friends</p>
-        <p className="opacity-65">Add your friends to get started</p>
+        <p className="font-semibold">{t('friendsTitle')}</p>
+        <p className="opacity-65">{t('friendsDescription')}</p>
       </div>
       <div className="flex flex-col gap-2">
         <Label className="font-semibold" htmlFor="friendName">
-          Add Friend
+          {t('addFriendLabel')}
         </Label>
         <div className="flex flex-row gap-4">
           <Input
             className="bg-white dark:bg-[#1c1c1c]"
             id="friendName"
-            placeholder="Enter friend's name"
+            placeholder={t('addFriendInputPlaceholder')}
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
@@ -57,8 +59,8 @@ const FriendsForm = () => {
         ) : (
           <div className="center flex flex-col items-center justify-center gap-1">
             <User size={32} />
-            <p className="text-center opacity-65">No friends added yet!</p>
-            <p className="text-center opacity-65">Add your first friend to get started</p>
+            <p className="text-center opacity-65">{t('noFriendAddedTop')}</p>
+            <p className="text-center opacity-65">{t('noFriendAddedBottom')}</p>
           </div>
         )}
       </div>

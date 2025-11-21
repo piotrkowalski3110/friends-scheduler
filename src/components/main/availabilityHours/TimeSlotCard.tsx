@@ -11,7 +11,7 @@ const TimeSlotCard: React.FC<ITimeSlotCardProps> = ({ weekDay, timeSlots }) => {
       <div className="mb-3 flex items-center justify-between">
         <p className="font-semibold">{weekDay}</p>
         <span className="rounded-full border bg-white px-2 py-0.5 text-xs text-gray-600 dark:border-neutral-700 dark:bg-[#151515] dark:text-gray-300">
-          {timeSlots.length} slot{timeSlots.length !== 1 ? 's' : ''}
+          {timeSlots.length}
         </span>
       </div>
       <div className="flex flex-col gap-2">

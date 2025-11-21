@@ -11,7 +11,7 @@ const CustomFooter = async () => {
             <p className="font-semibold">{t('title')}</p>
             <p className="opacity-65">{t('description')}</p>
           </div>
-          <p className="opacity-65">
+          <p className="text-center opacity-65">
             {year} Piotr Kowalski. {t('rightsReserved')}.
           </p>
         </div>

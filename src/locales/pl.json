@@ -18,6 +18,29 @@
     "rightsReserved": "Wszelkie prawa zastrzeżone"
   },
   "MainBody": {
-    "title": "Planer spotkań"
+    "title": "Planer spotkań",
+    "mainCards": {
+      "friendsCard": {
+        "friendsTitle": "Znajomi",
+        "friendsDescription": "Dodaj znajomych, aby rozpocząć",
+        "addFriendLabel": "Dodaj znajomego",
+        "addFriendInputPlaceholder": "Wprowadź imię znajomego",
+        "noFriendAddedTop": "Nie dodano żadnych znajomych!",
+        "noFriendAddedBottom": "Dodaj pierwszego znajomego, aby rozpocząć"
+      },
+      "availabilityCard": {
+        "availabilityTitle": "Godziny dostępności",
+        "availabilityDescription": "Dodaj dostępne przedziały czasowe dla każdego dnia",
+        "availabilitySelect": "Wybierz znajomego, aby zarządzać jego godzinami dostępności",
+        "availabilitySlotForm": {
+          "addTimeSlotTitle": "Dodaj przedział czasowy",
+          "addTimeSlotButton": "Dodaj przedział czasowy",
+          "noTimeSlots": "Nie dodano jeszcze żadnych przedziałów czasowych"
+        }
+      },
+      "summaryCard": {
+        "summaryTitle": "Dostępne terminy spotkań"
+      }
+    }
   }
 }

@@ -18,6 +18,29 @@
     "rightsReserved": "All rights reserved"
   },
   "MainBody": {
-    "title": "Meeting Scheduler"
+    "title": "Meeting Scheduler",
+    "mainCards": {
+      "friendsCard": {
+        "friendsTitle": "Friends",
+        "friendsDescription": "Add your friends to get started",
+        "addFriendLabel": "Add Friend",
+        "addFriendInputPlaceholder": "Enter friend's name",
+        "noFriendAddedTop": "No friends added yet!",
+        "noFriendAddedBottom": "Add your first friend to get started"
+      },
+      "availabilityCard": {
+        "availabilityTitle": "Availability Hours",
+        "availabilityDescription": "Add available time slots for each day",
+        "availabilitySelect": "Select a friend to manage their availability hours",
+        "availabilitySlotForm": {
+          "addTimeSlotTitle": "Add Time Slot",
+          "addTimeSlotButton": "Add Time Slot",
+          "noTimeSlots": "No time slots added yet"
+        }
+      },
+      "summaryCard": {
+        "summaryTitle": "Available Meeting Times"
+      }
+    }
   }
 }

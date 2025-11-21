@@ -4,12 +4,14 @@ import { WeekDaysDropdown } from '@/components/main/availabilityHours/WeekDaysDr
 import React from 'react';
 import { useFriendsStore } from '@/stores';
 import { WeekDays } from '@/types/dates';
+import { useTranslations } from 'next-intl';
 
 export const AddTimeSlotForm = () => {
   const [weekDay, setWeekDay] = React.useState(WeekDays[0]);
   const [startTime, setStartTime] = React.useState('08:00');
   const [endTime, setEndTime] = React.useState('16:00');
   const { addTimeSlot, friends, selectedFriendId } = useFriendsStore();
+  const t = useTranslations('MainBody.mainCards.availabilityCard');
 
   const selectedFriend = friends.find((friend) => friend.id === selectedFriendId);
   const existingDaySlots = (selectedFriend?.availabilityHours || []).filter((slot) => slot.weekDay === weekDay);
@@ -30,7 +32,7 @@ export const AddTimeSlotForm = () => {
 
   return (
     <div className="flex flex-col gap-4 rounded-2xl border bg-white p-4 dark:bg-[#1c1c1c]">
-      <p>Add Time Slot</p>
+      <p>{t('availabilitySlotForm.addTimeSlotTitle')}</p>
       <div className="flex flex-row gap-2 max-[380px]:flex-col">
         <WeekDaysDropdown weekDay={weekDay} setWeekDay={setWeekDay} />
         <Input
@@ -49,7 +51,7 @@ export const AddTimeSlotForm = () => {
         />
       </div>
       <Button onClick={createTimeSlot} disabled={isDisabled}>
-        Add Time Slot
+        {t('availabilitySlotForm.addTimeSlotButton')}
       </Button>
     </div>
   );
